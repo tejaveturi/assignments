@@ -1,0 +1,50 @@
+1.
+function getRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return "rgb(" + parseInt(result[1], 16) + "," + parseInt(result[2], 16) + "," + parseInt(result[3], 16) + ")";
+    
+}
+
+2.
+> parseInt(1e1);
+10
+> parseInt('1e1');
+10
+> parseFloat('1e1');
+10.0
+> isFinite(0/10);
+true
+> isFinite(20/0);
+false
+> isNaN(parseInt(NaN));
+true
+
+3.var a = 1;
+
+function f() {
+  function n() {
+    alert(a);
+  }
+  var a = 2;
+  n();
+}
+
+f();
+Ans: We will see a pop saying that 2 
+
+4.
+1.var f = alert;
+eval('f("Boo!")');
+Ans: alert("Boo!")
+
+2.var e;
+var f = alert;
+eval('e=f')('Boo!');
+Ans: alert('Boo') -->Alert Box
+
+3.
+(function(){
+  return alert;}
+)()('Boo!');
+Self evaluating function
+Ans: alert the boo

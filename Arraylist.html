@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Javascript Example</title>
+	<script type="text/javascript">
+		function ArrayList()
+		{
+			this.arr = [];
+			return arr;
+		}
+		ArrayList.prototype = {
+			add: function(number){
+				this.arr.push(number);
+			},
+			display: function(){
+				return this.arr;
+			},
+			remove: function(){
+				this.arr.pop();
+			}, 
+			get: function(index){
+				if(index < this.arr.length)
+					return this.arr[index];
+				else
+					return "No such index";
+			},
+			update: function(index,value){
+				if(index < this.arr.length)			
+				{
+					this.arr[index] = value;
+					return true;
+				}
+				else
+					return false;
+			},
+			sort: function(){
+				var temp = 0;
+				for(var index = 0; index < this.arr.length - 1; index++)
+					for(var jindex = index + 1; jindex < this.arr.length; jindex++)
+						if(this.arr[index] > this.arr[jindex])
+						{
+							temp = this.arr[index];
+							this.arr[index] = this.arr[jindex];
+							this.arr[jindex] = temp;
+						}
+				//console.log(this.arr);
+			}
+		}
+		var arr = new ArrayList();
+		arr.add(6);
+		arr.add(2);
+		arr.add(3);
+		console.log("The Number at index 2:" + arr.get(2));
+		console.log(arr.get(5));
+		console.log("The array contents: " + arr.display());
+		arr.remove();
+		console.log("The array contents: " + arr.display());
+		arr.add(4);
+		console.log("Value updation:" + arr.update(2,5));
+		console.log("The array contents: " + arr.display());
+		arr.sort();
+		console.log("The array contents: " + arr.display());
+	</script>
+</head>
+<body>
+	<h1>Welcome to Javascript</h1>
+</body>
+</html>
