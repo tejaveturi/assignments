@@ -1,3 +1,6 @@
+trying stash function 
+Submitted to YathaYu
+thankyou
 1.
 function getRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
